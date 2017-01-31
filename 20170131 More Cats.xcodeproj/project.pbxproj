@@ -17,6 +17,7 @@
 		897E412A1E40E737009890AE /* CatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 897E41291E40E737009890AE /* CatModel.m */; };
 		897E412D1E40E741009890AE /* Cat.m in Sources */ = {isa = PBXBuildFile; fileRef = 897E412C1E40E741009890AE /* Cat.m */; };
 		897E41301E40F5BD009890AE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 897E412F1E40F5BD009890AE /* MapKit.framework */; };
+		897E41331E41030C009890AE /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 897E41321E41030C009890AE /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,8 @@
 		897E412B1E40E741009890AE /* Cat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cat.h; sourceTree = "<group>"; };
 		897E412C1E40E741009890AE /* Cat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cat.m; sourceTree = "<group>"; };
 		897E412F1E40F5BD009890AE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		897E41311E41030C009890AE /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		897E41321E41030C009890AE /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +78,8 @@
 				897E410F1E40E62D009890AE /* AppDelegate.m */,
 				897E41221E40E677009890AE /* CatViewController.h */,
 				897E41231E40E677009890AE /* CatViewController.m */,
+				897E41311E41030C009890AE /* DetailViewController.h */,
+				897E41321E41030C009890AE /* DetailViewController.m */,
 				897E41281E40E737009890AE /* CatModel.h */,
 				897E41291E40E737009890AE /* CatModel.m */,
 				897E412B1E40E741009890AE /* Cat.h */,
@@ -183,6 +188,7 @@
 				897E412A1E40E737009890AE /* CatModel.m in Sources */,
 				897E41101E40E62D009890AE /* AppDelegate.m in Sources */,
 				897E410D1E40E62D009890AE /* main.m in Sources */,
+				897E41331E41030C009890AE /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

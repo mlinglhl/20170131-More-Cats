@@ -8,6 +8,7 @@
 
 #import "CatViewController.h"
 #import "CatModel.h"
+#import "DetailViewController.h"
 
 @interface CatViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *catCollectionView;
@@ -48,6 +49,14 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"DetailViewController"]) {
+        DetailViewController *dvc = segue.destinationViewController;
+        NSIndexPath *indexPath = [self.catCollectionView indexPathsForSelectedItems][0];
+        dvc.cat = [self.model catAtIndexPath:indexPath];
+    }
 }
 
 /*

@@ -45,4 +45,8 @@
     return cell;
 }
 
+- (Cat *)catAtIndexPath:(NSIndexPath *)indexPath {
+    return self.catArray[indexPath.item];
+}
+
 @end

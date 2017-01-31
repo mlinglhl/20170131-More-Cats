@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Cat;
 
 @interface CatModel : NSObject <UICollectionViewDataSource>
 
 - (void) createCatWithDictionary: (NSDictionary *) dict;
-
+- (Cat*) catAtIndexPath:(NSIndexPath*) indexPath;
 @end

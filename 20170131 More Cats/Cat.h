@@ -6,17 +6,18 @@
 //  Copyright © 2017 Minhung Ling. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
-@interface Cat : NSObject
+@interface Cat : NSObject <MKAnnotation>
 
-@property NSString* catID;
-@property NSString* owner;
-@property NSString* secret;
-@property NSString* server;
-@property NSNumber* farm;
-@property NSString* title;
-@property UIImage* image;
-- (instancetype)initWithDictionary: (NSDictionary *) dict;
+@property (nonatomic, nullable) NSString* catID;
+@property (nonatomic, nullable) NSString* owner;
+@property (nonatomic, nullable) NSString* secret;
+@property (nonatomic, nullable) NSString* server;
+@property (nonatomic, nullable) NSNumber* farm;
+@property (nonatomic, readonly, copy, nullable) NSString *title;
+@property (nonatomic, nullable) UIImage* image;
+@property (nonatomic) CLLocationCoordinate2D coordinate;
+- (nonnull instancetype)initWithDictionary: (nonnull NSDictionary *) dict;
 @end
