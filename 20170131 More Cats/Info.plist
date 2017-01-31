@@ -24,7 +24,12 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-	<key>UIRequiredDeviceCapabilities</key>
+    <key>NSLocationWhenInUseDescription</key>
+    <string>anything</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>always</string>
+    <key>UIRequiredDeviceCapabilities</key>
+    
 	<array>
 		<string>armv7</string>
 	</array>

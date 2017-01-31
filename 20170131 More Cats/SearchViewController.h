@@ -1,5 +1,5 @@
 //
-//  CatViewController.h
+//  SearchViewController.h
 //  20170131 More Cats
 //
 //  Created by Minhung Ling on 2017-01-31.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "SearchViewControllerDelegate.h"
 
-@interface CatViewController : UIViewController <SearchViewControllerDelegate>
-
+@interface SearchViewController : UIViewController <CLLocationManagerDelegate>
+@property id<SearchViewControllerDelegate> delegate;
 @end

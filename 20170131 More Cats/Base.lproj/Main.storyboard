@@ -6,9 +6,75 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Search-->
+        <scene sceneID="TSD-Sz-xLT">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" title="Search" id="2lp-j1-eZF" customClass="SearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8jP-EN-46Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="rjn-LH-vzA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ePV-r3-TB5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter search term" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hcK-Uv-Q9J">
+                                <rect key="frame" x="31" y="64" width="313" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4Pw-aw-Che">
+                                <rect key="frame" x="270" y="133.5" width="51" height="31"/>
+                                <connections>
+                                    <action selector="useLocationSwitch:" destination="2lp-j1-eZF" eventType="valueChanged" id="r5U-sa-2ZG"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use My Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GTj-ZU-67T">
+                                <rect key="frame" x="31" y="134" width="243" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="243" id="Icq-xS-H58"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c9e-TO-NO0">
+                                <rect key="frame" x="31" y="605" width="55" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveSearch:" destination="2lp-j1-eZF" eventType="touchUpInside" id="0EV-XL-sAN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="hcK-Uv-Q9J" firstAttribute="top" secondItem="8jP-EN-46Z" secondAttribute="bottom" constant="44" id="1k0-9v-1sq"/>
+                            <constraint firstItem="4Pw-aw-Che" firstAttribute="centerY" secondItem="GTj-ZU-67T" secondAttribute="centerY" id="2TL-bv-NBI"/>
+                            <constraint firstItem="GTj-ZU-67T" firstAttribute="top" secondItem="hcK-Uv-Q9J" secondAttribute="bottom" constant="40" id="5S5-WD-R2m"/>
+                            <constraint firstItem="GTj-ZU-67T" firstAttribute="leading" secondItem="ePV-r3-TB5" secondAttribute="leadingMargin" constant="15" id="70m-GJ-8PZ"/>
+                            <constraint firstItem="rjn-LH-vzA" firstAttribute="top" secondItem="c9e-TO-NO0" secondAttribute="bottom" constant="20" id="JAh-eB-O0K"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Pw-aw-Che" secondAttribute="trailing" constant="40" id="ad8-Yv-RrI"/>
+                            <constraint firstItem="c9e-TO-NO0" firstAttribute="leading" secondItem="ePV-r3-TB5" secondAttribute="leadingMargin" constant="15" id="iMy-2v-LZM"/>
+                            <constraint firstItem="hcK-Uv-Q9J" firstAttribute="centerX" secondItem="ePV-r3-TB5" secondAttribute="centerX" id="oDJ-eW-mN3"/>
+                            <constraint firstItem="hcK-Uv-Q9J" firstAttribute="leading" secondItem="ePV-r3-TB5" secondAttribute="leadingMargin" constant="15" id="paW-kN-2t6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hcK-Uv-Q9J" secondAttribute="trailing" constant="15" id="rrF-C2-dq6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchTextField" destination="hcK-Uv-Q9J" id="4sa-2V-BwM"/>
+                        <outlet property="useMyLocationSwitch" destination="4Pw-aw-Che" id="ja4-xg-tUl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="StV-So-Q5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1093.5999999999999" y="-571.66416791604206"/>
+        </scene>
         <!--Cat View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -86,7 +152,13 @@
                             <constraint firstItem="jWc-Ja-F8w" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="whk-LI-KDf"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aJE-ON-jgj"/>
+                    <navigationItem key="navigationItem" id="aJE-ON-jgj">
+                        <barButtonItem key="rightBarButtonItem" title="Search" id="H4X-mc-sSe">
+                            <connections>
+                                <segue destination="2lp-j1-eZF" kind="presentation" identifier="SearchViewController" id="eQv-PN-Lv9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="catCollectionView" destination="jWc-Ja-F8w" id="4mB-Bb-1Uf"/>
                     </connections>

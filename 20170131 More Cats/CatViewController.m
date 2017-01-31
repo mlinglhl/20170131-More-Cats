@@ -9,6 +9,7 @@
 #import "CatViewController.h"
 #import "CatModel.h"
 #import "DetailViewController.h"
+#import "SearchViewController.h"
 
 @interface CatViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *catCollectionView;
@@ -57,6 +58,14 @@
         NSIndexPath *indexPath = [self.catCollectionView indexPathsForSelectedItems][0];
         dvc.cat = [self.model catAtIndexPath:indexPath];
     }
+    if ([segue.identifier isEqualToString:@"SearchViewController"]) {
+        SearchViewController *svc = segue.destinationViewController;
+        svc.delegate = self;
+    }
+}
+
+- (void) setURL {
+    
 }
 
 /*
