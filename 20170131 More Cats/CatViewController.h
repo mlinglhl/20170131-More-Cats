@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CatViewController.h
 //  20170131 More Cats
 //
 //  Created by Minhung Ling on 2017-01-31.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface CatViewController : UIViewController
 
 @end
-
