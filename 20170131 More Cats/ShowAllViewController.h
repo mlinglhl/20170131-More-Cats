@@ -1,5 +1,5 @@
 //
-//  DetailViewController.h
+//  ShowAllViewController.h
 //  20170131 More Cats
 //
 //  Created by Minhung Ling on 2017-01-31.
@@ -10,6 +10,6 @@
 #import <MapKit/MapKit.h>
 @class Cat;
 
-@interface DetailViewController : UIViewController <MKMapViewDelegate>
-@property Cat *cat;
+@interface ShowAllViewController : UIViewController <MKMapViewDelegate>
+@property NSArray <Cat*> *catArray;
 @end

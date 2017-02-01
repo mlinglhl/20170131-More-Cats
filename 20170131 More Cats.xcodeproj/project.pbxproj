@@ -20,6 +20,7 @@
 		897E41331E41030C009890AE /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 897E41321E41030C009890AE /* DetailViewController.m */; };
 		89A440A21E41246600D66397 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A440A11E41246600D66397 /* SearchViewController.m */; };
 		89A440A51E412D2A00D66397 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A440A41E412D2A00D66397 /* CoreLocation.framework */; };
+		89A440A81E4169C600D66397 /* ShowAllViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89A440A71E4169C600D66397 /* ShowAllViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,8 @@
 		89A440A11E41246600D66397 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		89A440A31E41253500D66397 /* SearchViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewControllerDelegate.h; sourceTree = "<group>"; };
 		89A440A41E412D2A00D66397 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		89A440A61E4169C600D66397 /* ShowAllViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowAllViewController.h; sourceTree = "<group>"; };
+		89A440A71E4169C600D66397 /* ShowAllViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowAllViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,9 +88,10 @@
 				897E410F1E40E62D009890AE /* AppDelegate.m */,
 				897E41221E40E677009890AE /* CatViewController.h */,
 				897E41231E40E677009890AE /* CatViewController.m */,
-				89A440A01E41246600D66397 /* SearchViewController.h */,
-				89A440A11E41246600D66397 /* SearchViewController.m */,
-				89A440A31E41253500D66397 /* SearchViewControllerDelegate.h */,
+				89A440A61E4169C600D66397 /* ShowAllViewController.h */,
+				89A440A71E4169C600D66397 /* ShowAllViewController.m */,
+				897E41281E40E737009890AE /* CatModel.h */,
+				897E41291E40E737009890AE /* CatModel.m */,
 				897E41141E40E62D009890AE /* Main.storyboard */,
 				897E41171E40E62D009890AE /* Assets.xcassets */,
 				897E411C1E40E62D009890AE /* Info.plist */,
@@ -100,10 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				897E410C1E40E62D009890AE /* main.m */,
+				89A440A01E41246600D66397 /* SearchViewController.h */,
+				89A440A11E41246600D66397 /* SearchViewController.m */,
+				89A440A31E41253500D66397 /* SearchViewControllerDelegate.h */,
 				897E41311E41030C009890AE /* DetailViewController.h */,
 				897E41321E41030C009890AE /* DetailViewController.m */,
-				897E41281E40E737009890AE /* CatModel.h */,
-				897E41291E40E737009890AE /* CatModel.m */,
 				897E412B1E40E741009890AE /* Cat.h */,
 				897E412C1E40E741009890AE /* Cat.m */,
 				897E41251E40E6DA009890AE /* CatCell.h */,
@@ -201,6 +206,7 @@
 				897E410D1E40E62D009890AE /* main.m in Sources */,
 				89A440A21E41246600D66397 /* SearchViewController.m in Sources */,
 				897E41331E41030C009890AE /* DetailViewController.m in Sources */,
+				89A440A81E4169C600D66397 /* ShowAllViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

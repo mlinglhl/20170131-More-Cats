@@ -10,7 +10,8 @@
 @class Cat;
 
 @interface CatModel : NSObject <UICollectionViewDataSource>
-
+@property (strong) NSMutableDictionary *URLProperties;
 - (void) createCatWithDictionary: (NSDictionary *) dict;
 - (Cat*) catAtIndexPath:(NSIndexPath*) indexPath;
+- (NSURL*) generateURL;
 @end

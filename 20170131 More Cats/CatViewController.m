@@ -21,35 +21,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.model = [CatModel new];
-    self.catCollectionView.dataSource = self.model;
-        NSURL *url = [NSURL URLWithString:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=4ecacf0cd6441400e02e57ec12f0bb68&tags=cat&has_geo=1"];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-        NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
-        NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            if (error) {
-                return;
-            }
-            NSError *jsonError = nil;
-            NSDictionary *caTionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
-            if (jsonError) {
-                return;
-            }
-            NSDictionary *atKeyPhotos = [caTionary objectForKey:@"photos"];
-            NSArray *catArray = [atKeyPhotos objectForKey:@"photo"];
-            for (NSDictionary *dict in catArray) {
-                [self.model createCatWithDictionary: dict];
-            }
-            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-                [self.catCollectionView reloadData];
-            }];
-        }];
-        [dataTask resume];
+    [self performSegueWithIdentifier:@"SearchViewController" sender:self];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:YES];
+    self.catCollectionView.dataSource = self.model;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -61,21 +43,35 @@
     if ([segue.identifier isEqualToString:@"SearchViewController"]) {
         SearchViewController *svc = segue.destinationViewController;
         svc.delegate = self;
+        svc.model = self.model;
     }
 }
 
-- (void) setURL {
-    
+- (void) reloadData {
+    [self.catCollectionView reloadData];
+    NSURL *url = [self.model generateURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error) {
+            return;
+        }
+        NSError *jsonError = nil;
+        NSDictionary *caTionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+        if (jsonError) {
+            return;
+        }
+        NSDictionary *atKeyPhotos = [caTionary objectForKey:@"photos"];
+        NSArray *catArray = [atKeyPhotos objectForKey:@"photo"];
+        for (NSDictionary *dict in catArray) {
+            [self.model createCatWithDictionary: dict];
+        }
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [self.catCollectionView reloadData];
+        }];
+    }];
+    [dataTask resume];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

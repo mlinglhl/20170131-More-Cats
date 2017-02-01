@@ -18,9 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.manager = [CLLocationManager new];
-    self.manager.delegate = self;
-    [self.manager requestLocation];
+    [self.model.URLProperties removeAllObjects];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
@@ -37,22 +35,19 @@
 }
 
 - (IBAction)saveSearch:(UIButton *)sender {
-    CLLocation *myLocation = self.manager.location;
-    CLLocationCoordinate2D myCoordinate = myLocation.coordinate;
+    if (self.searchTextField.text.length > 0) {
+        [self.model.URLProperties setValue:self.searchTextField.text forKey:@"tags"];
+     }
+    if (self.useMyLocationSwitch.on) {
+        CLLocationManager *locationManager = [CLLocationManager new];
+        locationManager.delegate = self;
+        [locationManager requestLocation];
+        CLLocationCoordinate2D coord = locationManager.location.coordinate;
+        [self.model.URLProperties setValue:@(coord.latitude).stringValue forKey:@"lat"];
+        [self.model.URLProperties setValue:@(coord.longitude).stringValue forKey:@"lon"];
+    }
+    [self.delegate reloadData];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-- (IBAction)useLocationSwitch:(UISwitch *)sender {
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

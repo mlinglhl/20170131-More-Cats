@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "SearchViewControllerDelegate.h"
+#import "CatModel.h"
 
 @interface SearchViewController : UIViewController <CLLocationManagerDelegate>
 @property id<SearchViewControllerDelegate> delegate;
+@property CatModel *model;
 @end

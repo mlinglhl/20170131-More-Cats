@@ -8,6 +8,6 @@
 
 @protocol SearchViewControllerDelegate <NSObject>
 
-- (void) setURL;
+- (void) reloadData;
 
 @end
