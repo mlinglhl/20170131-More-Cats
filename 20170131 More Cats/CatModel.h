@@ -11,6 +11,8 @@
 
 @interface CatModel : NSObject <UICollectionViewDataSource>
 @property (strong) NSMutableDictionary *URLProperties;
+
+- (NSArray *) getCatArray;
 - (void) createCatWithDictionary: (NSDictionary *) dict;
 - (Cat*) catAtIndexPath:(NSIndexPath*) indexPath;
 - (NSURL*) generateURL;

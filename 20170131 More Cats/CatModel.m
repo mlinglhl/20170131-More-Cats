@@ -11,8 +11,8 @@
 #import "Cat.h"
 
 @interface CatModel ()
-@property NSMutableArray *catArray;
 @property NSArray *propertyKeys;
+@property NSMutableArray *catArray;
 @end
 
 @implementation CatModel
@@ -57,7 +57,7 @@
 
 - (NSURL*) generateURL {
     self.catArray = [NSMutableArray new];
-    NSMutableString *urlString = [[NSMutableString alloc] initWithString:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=4ecacf0cd6441400e02e57ec12f0bb68&has_geo=1"];
+    NSMutableString *urlString = [[NSMutableString alloc] initWithString:@"https://api.flickr.com/services/rest/?method=flickr.photos.search&format=json&nojsoncallback=1&api_key=4ecacf0cd6441400e02e57ec12f0bb68&has_geo=1&extras=geo"];
     for (NSString *key in self.propertyKeys) {
         if ([self.URLProperties.allKeys containsObject:key]) {
             NSString *string = [[self.URLProperties objectForKey:key] stringByReplacingOccurrencesOfString:@" " withString:@""];
@@ -65,5 +65,9 @@
         }
     }
     return [NSURL URLWithString:urlString];
+}
+
+- (NSArray *) getCatArray {
+    return self.catArray;
 }
 @end

@@ -8,8 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
-@class Cat;
+@class CatModel;
 
 @interface ShowAllViewController : UIViewController <MKMapViewDelegate>
-@property NSArray <Cat*> *catArray;
+@property CatModel *model;
 @end

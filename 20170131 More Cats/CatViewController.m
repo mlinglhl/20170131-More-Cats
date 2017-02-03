@@ -10,6 +10,7 @@
 #import "CatModel.h"
 #import "DetailViewController.h"
 #import "SearchViewController.h"
+#import "ShowAllViewController.h"
 
 @interface CatViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *catCollectionView;
@@ -44,6 +45,10 @@
         SearchViewController *svc = segue.destinationViewController;
         svc.delegate = self;
         svc.model = self.model;
+    }
+    if ([segue.identifier isEqualToString:@"ShowAllViewController"]) {
+        ShowAllViewController *savc = segue.destinationViewController;
+        savc.model = self.model;
     }
 }
 

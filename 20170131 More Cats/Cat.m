@@ -20,6 +20,9 @@
         _server = [dict objectForKey:@"server"];
         _farm = [dict objectForKey:@"farm"];
         _title = [dict objectForKey:@"title"];
+        double lat = [[dict objectForKey:@"latitude"] doubleValue];
+        double lon = [[dict objectForKey:@"longitude"] doubleValue];
+        _coordinate = CLLocationCoordinate2DMake(lat, lon);
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://farm%d.staticflickr.com/%@/%@_%@.jpg", self.farm.intValue, self.server, self.catID, self.secret]];
         NSData *data = [NSData dataWithContentsOfURL:url];
         _image = [UIImage imageWithData:data];

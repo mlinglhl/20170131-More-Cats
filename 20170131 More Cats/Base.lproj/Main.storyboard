@@ -99,6 +99,9 @@
                             <constraint firstItem="1rj-G4-WQJ" firstAttribute="top" secondItem="0sy-b7-k6r" secondAttribute="bottom" id="w13-cf-z50"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="catMapView" destination="0sy-b7-k6r" id="Ee8-zy-rGx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="767-ds-QQC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -134,12 +137,12 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6uo-qO-MqA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="200"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="170"/>
                                                 </imageView>
                                                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjI-ef-kl3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="71"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="170" height="41"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="NXg-6E-qtu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="170" height="71"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="170" height="41"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     </view>
                                                     <blurEffect style="light"/>
